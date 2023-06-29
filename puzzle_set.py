@@ -2,19 +2,21 @@
 
 class PuzzleSet:
 
-    def __init__(self, stats, puzzles, set_complete=False):
+    def __init__(self, stats, puzzles, set_complete=False, introduction=None):
         self.stats = stats
         self.puzzles = puzzles
         self.set_complete = set_complete
+        self.introduction = introduction
 
     def get_input(self, lower, upper):
         # read 
-        # validate
-        print("TODO: get input from user!")
-        return 0 # return what was entered once we get something valid
+        # TODO: validate
+        str_in = input(">> ")
+        return int(str_in)
 
     def run(self):
-        
+        if(self.introduction):
+            print(self.introduction)
         while(True):
             # Display the puzzle choices & exit option
             print("What do you want to do?")
