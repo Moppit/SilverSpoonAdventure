@@ -61,7 +61,7 @@ class RaceTrack(Puzzle):
             elif num_obstacles > 7:
                 print("\nAki: I don't remember there being so many obstacles")
         print(dedent(""" 
-                    Aki peers over your shoulder as you are finishing up
+                    Aki peers over your shoulder as you are finishing up.
                     Aki: Ahhh... that looks familiar. I think you found the right setup. Thanks a lot!
                          Let's set up the race track.       
                 """))
