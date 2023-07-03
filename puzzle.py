@@ -16,6 +16,14 @@ class Puzzle:
         self.puzzle()
         return self.stats
 
+
+    def input_exitable(self,prompt):
+        value = input(prompt)
+        if value == 'q':
+            return value, True
+        else:
+            return value, False
+
     # ===== DON'T FORGET!!!!! =====
     # Make sure to update the stats object!
     # Make sure to always set the puzzle completion status!
