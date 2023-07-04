@@ -2,6 +2,7 @@ from puzzle import Puzzle
 import sys
 from textwrap import dedent
 from PIL import Image
+import time
 sys.path.insert(0, './..')
 
 class RaceTrack(Puzzle):
@@ -39,10 +40,10 @@ class RaceTrack(Puzzle):
         input("(Press ENTER to continue)")
         print(dedent("""
                Aki: Sounds pretty confusing to me, so I'll let you handle it. But I do rememeber 
-                    something that might be helpful: After we set up the race track, there weren't 
+                    some things that might be helpful. After we set up the race track, there weren't 
                     any empty spots left on the field. Every spot was either filled with an obstacle 
                     or a part of the race track. Also, the race track made a loop. Hopefully you can
-                    piece all of our information togther to figure out how the track was set up.
+                    piece all this information togther to figure out how the track was set up.
                 """))
         input("(Press ENTER to continue)")
         num_obstacles = None
@@ -54,12 +55,15 @@ class RaceTrack(Puzzle):
                 if user_quit:
                     return
                 num_obstacles = float(num_obstacles)
+                if not num_obstacles:
+                    print("\nAki: I don't think thats a number, try again")
+                elif num_obstacles < 7:
+                    print("\nAki: I think I remember there being more obstacles")
+                elif num_obstacles > 7:
+                    print("\nAki: I don't remember there being so many obstacles")
             except:
-                pass 
-            if num_obstacles < 7:
-                print("\nAki: I think I remember there being more obstacles")
-            elif num_obstacles > 7:
-                print("\nAki: I don't remember there being so many obstacles")
+                print("Aki: I don't think thats a number, try again")
+           
         print(dedent(""" 
                     Aki peers over your shoulder as you are finishing up.
                     Aki: Ahhh... that looks familiar. I think you found the right setup. Thanks a lot!
@@ -67,4 +71,6 @@ class RaceTrack(Puzzle):
                 """))
         self.stats.update_strength(2)
         self.stats.update_stamina(-3)
+        self.stats.print_stats()
+        input("(Press ENTER to continue)\n")
         self.completed = True

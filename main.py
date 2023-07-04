@@ -2,8 +2,10 @@ import time
 from stats import Stats
 from puzzles.m_horse_care import HorseCare
 from puzzles.m_race_track import RaceTrack
+from puzzles.m_aki_talk import AkiTalk
 from puzzle_set import PuzzleSet
 from textwrap import dedent
+from playsound import playsound
 
 # Stats tracking vars
 # Instantiated here, read from file
@@ -23,7 +25,6 @@ print(dedent("""
 
          zzzzzzzzzzz
               """))
-
 input("(Press ENTER to continue)")
 
 time.sleep(2)
@@ -62,6 +63,10 @@ print(dedent("""
 
 input("(Press ENTER to continue)")
 
+stats.print_stats()
+
+input("(Press ENTER to continue)")
+
 time.sleep(2)
 
 print(dedent("""
@@ -93,7 +98,8 @@ morning_intro = dedent("""
               """)
 horse_care = HorseCare(stats, False)
 race_track = RaceTrack(stats, False)
-morning = PuzzleSet(stats, [horse_care,race_track,horse_care], introduction=morning_intro)
+aki_talk = AkiTalk(stats, False)
+morning = PuzzleSet(stats, [horse_care,race_track,aki_talk], introduction=morning_intro)
 if not morning.set_complete:
     stats = morning.run()
 

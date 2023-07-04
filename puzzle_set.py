@@ -22,7 +22,9 @@ class PuzzleSet:
             print("What do you want to do?")
             num_puzzles = len(self.puzzles)
             for i in range(num_puzzles):
-                print(i, "-", self.puzzles[i].description)
+                puzzle = self.puzzles[i]
+                if not puzzle.completed:
+                    print(i, "-", self.puzzles[i].description)
             print(num_puzzles, "-", "Exit")
 
             # If she choses exit
@@ -38,15 +40,21 @@ class PuzzleSet:
             # Save finished puzzle in stats object
             if self.puzzles[entered].completed:
                 self.stats = new_stats
+            else:
+                print("\nActually, you kind of feel like doing a different chore first.\n")
 
+
+            done = True
             # If all puzzles completed, exit
             for puzzle in self.puzzles:
                 if not puzzle.completed:
-                    continue
+                    done = False
+                    break
             
             # If all puzzles are complete, exit loop
-            self.set_complete = True
-            break
+            if done:
+                self.set_complete = True
+                break
         
         # Return stats
         return self.stats

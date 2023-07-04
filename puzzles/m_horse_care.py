@@ -1,5 +1,6 @@
 from puzzle import Puzzle
 import sys
+import time
 from textwrap import dedent
 sys.path.insert(0, './..')
 
@@ -75,7 +76,11 @@ class HorseCare(Puzzle):
                 print("     I think the hay is about right")  
             if hay != 4.5 or oats != 2:
                 print("Aki: Let's try again!\n")
-        print("\nAki: Thanks for doing the math for me, that seems about right.\n Let's feed the horses!")
+        print(dedent("""
+            Aki: Thanks for doing the math for me, that seems about right.
+                 Let's feed the horses!
+              """))
         self.stats.update_strength(1)
         self.stats.update_stamina(-1)
+        self.stats.print_stats()
         self.completed = True
