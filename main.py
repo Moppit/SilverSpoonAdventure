@@ -4,6 +4,7 @@ from puzzles.m_horse_care import HorseCare
 from puzzles.m_race_track import RaceTrack
 from puzzles.m_aki_talk import AkiTalk
 from puzzles.a_lunch import Lunch
+from puzzles.a_hachiken_talk import HachikenTalk
 from puzzle_set import PuzzleSet
 from textwrap import dedent
 from playsound import playsound
@@ -112,10 +113,12 @@ if morning.set_complete and not horse_riding_puzzle_complete:
 # Puzzle Set 2 - Afternoon
 afternoon_intro = dedent("""
     Hachiken: Hi Huilin! Nice to meet you. It seems like you and I have been paired 
-              for chores until lunch! We've been assigned to the pigs and making lunch.
+              for chores until lunch! We've been assigned to the pigs and making pizza
+              for lunch.
               """)
-lunch = Lunch(stats, False, False)
-afternoon = PuzzleSet(stats, [lunch,lunch,lunch])
+lunch = Lunch(stats, False)
+hachiken_talk = HachikenTalk(stats, False)
+afternoon = PuzzleSet(stats, [lunch,lunch,hachiken_talk])
 if horse_riding_puzzle_complete and not afternoon.set_complete:
     stats = afternoon.run()
 
