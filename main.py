@@ -5,6 +5,8 @@ from puzzles.m_race_track import RaceTrack
 from puzzles.m_aki_talk import AkiTalk
 from puzzles.a_lunch import Lunch
 from puzzles.a_hachiken_talk import HachikenTalk
+from puzzles.e_chicken_eggs import ChickenEggs
+from puzzles.e_horse_manure import HorseManure
 from puzzles.e_tokiwa_talk import TokiwaTalk
 from puzzle_set import PuzzleSet
 from textwrap import dedent
@@ -137,8 +139,10 @@ evening_intro = dedent("""
             ...
             (We also have to dig up manure, but I'm going to ignore that for now.)
               """)
+chicken_eggs = ChickenEggs(stats, False)
+horse_manure = HorseManure(stats, False)
 tokiwa_talk = TokiwaTalk(stats, False)
-evening = PuzzleSet(stats, [tokiwa_talk], introduction=evening_intro)
+evening = PuzzleSet(stats, [chicken_eggs, horse_manure, tokiwa_talk], introduction=evening_intro)
 if baseball_puzzle_complete and not evening.set_complete:
     stats = evening.run()
 
