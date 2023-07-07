@@ -3,6 +3,7 @@ from stats import Stats
 from puzzles.m_horse_care import HorseCare
 from puzzles.m_race_track import RaceTrack
 from puzzles.m_aki_talk import AkiTalk
+from puzzles.m_horse_ride import HorseRide
 from puzzles.a_lunch import Lunch
 from puzzles.a_hachiken_talk import HachikenTalk
 from puzzles.e_chicken_eggs import ChickenEggs
@@ -109,9 +110,9 @@ if not morning.set_complete:
     stats = morning.run()
 
 # Puzzle - Horse Riding Event
-horse_riding_puzzle_complete = True # TODO: make actual obj
-if morning.set_complete and not horse_riding_puzzle_complete:
-    print("TODO")
+horse_riding = HorseRide(stats, False) 
+if morning.set_complete and not horse_riding.completed:
+    horse_riding.puzzle()
 
 # Puzzle Set 2 - Afternoon
 afternoon_intro = dedent("""
@@ -119,10 +120,11 @@ afternoon_intro = dedent("""
               for chores until lunch! We've been assigned to the pigs and making pizza
               for lunch.
               """)
+
 lunch = Lunch(stats, False)
 hachiken_talk = HachikenTalk(stats, False)
 afternoon = PuzzleSet(stats, [lunch,lunch,hachiken_talk], introduction=afternoon_intro)
-if horse_riding_puzzle_complete and not afternoon.set_complete:
+if horse_riding.completed and not afternoon.set_complete:
     stats = afternoon.run()
 
 # Puzzle - Baseball
