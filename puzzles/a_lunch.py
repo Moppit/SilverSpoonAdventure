@@ -6,15 +6,12 @@ sys.path.insert(0, './..')
 
 class Lunch(Puzzle):
 
-    def __init__(self, stats, completed=False, komaba_visited=False):
+    def __init__(self, stats, completed=False):
         super().__init__(stats, completed)
-        self.description = "Make lunch"
+        self.description = "Make pizza for lunch"
         self.save_key = "ALU"
-        self.komaba_visited = komaba_visited
 
     def puzzle(self):
-        # TODO: add exit option
-
         # Puzzle intro
         print(dedent("""
          Hachiken: Lunch it is! Fair warning, all of these guys are\n
@@ -28,18 +25,12 @@ class Lunch(Puzzle):
         img.show()
         
         # Start puzzle
-        follow_up_dialogue = None
-        if self.komaba_visited:
-            follow_up_dialogue = "he's waiting on his slice"
-        else:
-            follow_up_dialogue = "I have a feeling he'll stop by soon"
-
         print(dedent(f"""
          Hachiken: It's super cryptic, so I'm not sure what to do. All I know is that
                    each person wants all of the toppings, and they don't want anyone
                    else to have the same topping as them per circular ring. Do you think
                    you can figure it out? Let's just figure out Komaba's slice for now,
-                   since {follow_up_dialogue}.
+                   since he'll need it soon.
               """))
         input("(Press ENTER to continue)")
 
@@ -60,8 +51,9 @@ class Lunch(Puzzle):
         
         print(dedent("""
        Hachiken: Oooh, thanks for topping his slice! This kind of makes sense to me now. Let me do the rest,
-                 and then we can put the pizza in the oven!
+                 and then we can put the pizza in the oven! It should be done by lunchtime.
               """))
+        self.stats.update_strength(1)
         self.stats.update_stamina(-1)
         self.stats.print_stats()
         self.completed = True

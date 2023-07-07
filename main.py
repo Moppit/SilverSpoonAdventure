@@ -5,6 +5,8 @@ from puzzles.m_race_track import RaceTrack
 from puzzles.m_aki_talk import AkiTalk
 from puzzles.m_horse_ride import HorseRide
 from puzzles.a_lunch import Lunch
+from puzzles.a_hachiken_talk import HachikenTalk
+from puzzles.e_tokiwa_talk import TokiwaTalk
 from puzzle_set import PuzzleSet
 from textwrap import dedent
 from playsound import playsound
@@ -113,16 +115,34 @@ if morning.set_complete and not horse_riding.completed:
 # Puzzle Set 2 - Afternoon
 afternoon_intro = dedent("""
     Hachiken: Hi Huilin! Nice to meet you. It seems like you and I have been paired 
-              for chores until lunch! We've been assigned to the pigs and making lunch.
+              for chores until lunch! We've been assigned to the pigs and making pizza
+              for lunch.
               """)
-lunch = Lunch(stats, False, False)
-afternoon = PuzzleSet(stats, [lunch,lunch,lunch])
+
+lunch = Lunch(stats, False)
+hachiken_talk = HachikenTalk(stats, False)
+afternoon = PuzzleSet(stats, [lunch,lunch,hachiken_talk], introduction=afternoon_intro)
 if horse_riding.completed and not afternoon.set_complete:
     stats = afternoon.run()
 
 # Puzzle - Baseball
+baseball_puzzle_complete = True # TODO: make actual obj
+if afternoon.set_complete and not baseball_puzzle_complete:
+    print("TODO")
 
 # Puzzle Set 3 - Evening
+evening_intro = dedent("""
+    Tokiwa: Hiya! Looks like we're assigned to work together for the evening shift!
+            Ready for some winner winner chicken pre-dinner? And by that I mean, we (both 
+            key players on the WINNING baseball team, haha!) have been assigned to the 
+            chickens for pre-dinner chores. 
+            ...
+            (We also have to dig up manure, but I'm going to ignore that for now.)
+              """)
+tokiwa_talk = TokiwaTalk(stats, False)
+evening = PuzzleSet(stats, [tokiwa_talk], introduction=evening_intro)
+if baseball_puzzle_complete and not evening.set_complete:
+    stats = evening.run()
 
 # Talk with Komaba
 
