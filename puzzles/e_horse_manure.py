@@ -179,15 +179,18 @@ class HorseManure(Puzzle):
                                 dice_roll = random.randrange(0, 21)
                                 if dice_roll < self.stats.dexterity:
                                     print("Luckily, your dexterity level was high enough to avoid it!")
-                                    print("The spot has now been marked")
+                                    print("The spot has now been marked.")
                                     self.board[r][c][0] = 'marked'
                                 else:
-                                    print("Tough luck... you stepped in it :')")
+                                    print("Tough luck... you stepped in it 🥲")
                                     print(dedent("""
                                         Tokiwa: Yikes, did you step on some?? Sorry for making you do the dirty
                                                 work, let's go back and get you cleaned up. We can come back and
                                                 try this again later.
                                         """))
+                                    self.board[r][c][0] = 'mine'
+                                    self.print_board()
+                                    input("(Press ENTER to continue)")
                                     return
 
                             # Not a mine

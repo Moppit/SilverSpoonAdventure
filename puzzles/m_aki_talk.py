@@ -144,7 +144,7 @@ class AkiTalk(Puzzle):
             response, user_quit = self.input_exitable("Do you ask her who she is thinking of? >> ")
             if user_quit:
                 return
-            if response.lower().strip() is not "no" and response.lower().strip() is not "n":
+            if response.lower().strip() != "no" and response.lower().strip() != "n":
                 stat_check = None
                 while True:
                     print("\nRoll a d20 for Social Confidence to see if you are confident enough to question her further.")
@@ -184,7 +184,7 @@ class AkiTalk(Puzzle):
             response, user_quit = self.input_exitable("Do you ask her who she is thinking of and why she's a bit sad? >> ")
             if user_quit:
                 return
-            if response.lower().strip() is not "no" and response.lower().strip() is not "n":
+            if response.lower().strip() != "no" and response.lower().strip() != "n":
                 stat_check = None
                 while True:
                     print("\nRoll a d20 for Social Confidence to see if you are confident enough to question her further.")
