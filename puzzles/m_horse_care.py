@@ -81,6 +81,6 @@ class HorseCare(Puzzle):
                  Let's feed the horses!
               """))
         self.stats.update_strength(1)
-        self.stats.update_stamina(-1)
+        self.stats.update_stamina(-2)
         self.stats.print_stats()
         self.completed = True

@@ -40,7 +40,7 @@ class AkiTalk(Puzzle):
                 print("Yeah, sure. We still have a lot to do today!")
                 self.stats.update_social_confidence(2)
                 self.stats.update_social_intelligence(1)
-                self.stats.update_stamina(2)
+                self.stats.update_stamina(1)
                 self.stats.print_stats()
                 input("(Press ENTER to continue)\n")
                 self.completed = True

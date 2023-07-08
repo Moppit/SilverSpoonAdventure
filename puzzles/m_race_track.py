@@ -13,7 +13,6 @@ class RaceTrack(Puzzle):
         self.save_key = "MRT"
 
     def puzzle(self):
-        # TODO: add exit option
         print(dedent("""
               Aki: We're having a big race tomorrow and we need to build the track that 
                    the horses will be racing on. We were planning on setting up the same 

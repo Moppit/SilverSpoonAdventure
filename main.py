@@ -5,6 +5,7 @@ from puzzles.m_race_track import RaceTrack
 from puzzles.m_aki_talk import AkiTalk
 from puzzles.m_horse_ride import HorseRide
 from puzzles.a_lunch import Lunch
+from puzzles.a_pig_pen import PigPen
 from puzzles.a_hachiken_talk import HachikenTalk
 from puzzles.e_chicken_eggs import ChickenEggs
 from puzzles.e_horse_manure import HorseManure
@@ -122,8 +123,9 @@ afternoon_intro = dedent("""
               """)
 
 lunch = Lunch(stats, False)
+pig_pen = PigPen(stats, False)
 hachiken_talk = HachikenTalk(stats, False)
-afternoon = PuzzleSet(stats, [lunch,lunch,hachiken_talk], introduction=afternoon_intro)
+afternoon = PuzzleSet(stats, [pig_pen,lunch,hachiken_talk], introduction=afternoon_intro)
 if horse_riding.completed and not afternoon.set_complete:
     stats = afternoon.run()
 
