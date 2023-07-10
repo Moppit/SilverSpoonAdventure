@@ -23,8 +23,8 @@ class Baseball(Puzzle):
         }
         self.indicator = "C"
         self.steal = "E"
-        self.huilins_team_blue = []
-        self.opposing_team_red = []
+        self.huilins_team_blue = ["Komaba (captain)", "Huilin", "Tokiwa", "Aki", "Beppu"]
+        self.opposing_team_red = ["Shin-ichiro Inada (captain)", "Hachiken", "Aikawa", "Tamako Inada", "Yoshino"]
         self.num_consecutive_correct = 0
 
     def puzzle(self):
@@ -34,20 +34,51 @@ class Baseball(Puzzle):
               """))
         input("(Press ENTER to continue)")
 
-        print("Lunch is over now, and the baseball game is about to commence!")
-        # TODO: add the preface for why everyone runs over
+        print("Lunch is over now, and the baseball game is about to commence!\n")
+        print("Hachiken: Okay, I've randomly generated teams!")
+        print("          Blue team:", ' ,'.join(self.huilins_team_blue))
+        print("          Red team:", ' ,'.join(self.opposing_team_red))
+        input("(Press ENTER to continue)")
 
         # Talk about how she hears the other team say, hey watch for the indicator
-        print("As you walk to your position at second base, you hear the other team whispering to each other. 'Don't forget the indicator' they say")
+        print(dedent("""\n
+            As you walk to your position at second base, you hear the other team's captain, Shin-ichiro Inada,
+            whispering to his team.
+
+            Shin-ichiro Inada: Don't forget the indicator!
+        """))
+        input("(Press ENTER to continue)")
 
         # Explain the symbols: note which letter means what
+        print(dedent("""
+            You realize, the other team is going to use baseball signs! If you can interpret them,
+            that would be a huge boost to your team. You run up to Komaba, your team's captain,
+            to tell him your plan.
+
+            Huilin: Komaba! I think the other team will be using baseball signs. I'm going to try
+                    to crack it.
+        """))
+        input("(Press ENTER to continue)")
+
+        print(dedent("""
+            Komaba: Oh really? That's a cool idea, I haven't tried that before. Cracking an
+                    opposing team's baseball signs is supposed to be pretty hard. If you can 
+                    do it, please let me know what you find.
+        """))
+        input("(Press ENTER to continue)")
+
+        print("\n\nAnd the game begins!\n\n")
+        input("(Press ENTER to continue)")
+
+        print("You notice the following gestures being used by Inada:")
+        for item in self.movements:
+            print(item, ":", self.movements[item])
 
         # For each round, let her see the symbols, and let her guess steal vs. no steal
-        # She must get 5 of them correct consecutively in order to tell Komaba
         while True:
             option = random.choice(["steals", "doesn't steal"])
             signs = self.generate_signs(option)
-            print("You start intently as the coach signals to their team.")
+            print("You stare intently as the coach signals to their team.")
             print("The coach makes the following signs:", signs)
             try:
                 guess, user_quit = self.input_exitable("What do you guess? 'steals' or 'doesn't steal'? (or 'q' to exit): ")
@@ -66,6 +97,7 @@ class Baseball(Puzzle):
                 pass
 
             if self.num_consecutive_correct >= 5:
+                print()
                 print("You have gotten 5 correct in a row!")
                 print("You quickly run up to the pitcher Komaba to tell him what you've discerned.")
                 print("Komaba: Oh hey! Did you figure out which action is the indicator?")
@@ -91,6 +123,7 @@ class Baseball(Puzzle):
         print("\nThe game continues, and Komaba anticipates their every move.")
         print("\nGame Announcer: And the winning team is: the Blue Team!")
         print("\nThe audience roars!! That's the game!")
+        input("(Press ENTER to continue)")
 
         self.stats.update_strength(2)
         self.stats.update_stamina(-2)
