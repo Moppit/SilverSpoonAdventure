@@ -36,9 +36,9 @@ class Baseball(Puzzle):
 
         print("Lunch is over now, and the baseball game is about to commence!\n")
         print("Hachiken: Okay, I've randomly generated teams!")
-        print("          Blue team:", ' ,'.join(self.huilins_team_blue))
-        print("          Red team:", ' ,'.join(self.opposing_team_red))
-        input("(Press ENTER to continue)")
+        print("          Blue team:", ', '.join(self.huilins_team_blue))
+        print("          Red team:", ', '.join(self.opposing_team_red))
+        input("\n(Press ENTER to continue)")
 
         # Talk about how she hears the other team say, hey watch for the indicator
         print(dedent("""\n
@@ -84,7 +84,8 @@ class Baseball(Puzzle):
                 guess, user_quit = self.input_exitable("What do you guess? 'steals' or 'doesn't steal'? (or 'q' to exit): ")
                 if user_quit:
                     return
-
+                if guess == "steal":
+                    guess = "steals"
                 print("You watch the result -- the team", option)
                 if guess == option:
                     self.num_consecutive_correct += 1
