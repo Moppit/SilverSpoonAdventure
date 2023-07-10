@@ -93,6 +93,7 @@ class ChickenEggs(Puzzle):
                 self.tokiwas_bucket = 0
                 self.huilins_bucket = 0
                 self.huilins_turn = True
+                self.print_board()
                 input("(Press ENTER to continue)")
                 continue
 
@@ -117,7 +118,7 @@ class ChickenEggs(Puzzle):
                             self.huilins_turn = True
                             return
                         nest_idx = int(input_nest_idx)
-                        if nest_idx < 0 or nest_idx > 5:
+                        if nest_idx < 0 or nest_idx > 5 or self.board[1][nest_idx] == 0:
                             print("Invalid input, try again")
                             continue
                         free_turn = self.move_eggs(nest_idx)
@@ -215,7 +216,7 @@ class ChickenEggs(Puzzle):
 
         # Choose any of the 6 moves randomly, so long as it's valid
         nest_idx = None
-        while not nest_idx:
+        while nest_idx == None:
             select = random.randrange(0, 6)
             if self.board[0][select] != 0:
                 nest_idx = select
