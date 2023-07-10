@@ -7,6 +7,7 @@ from puzzles.m_horse_ride import HorseRide
 from puzzles.a_lunch import Lunch
 from puzzles.a_pig_pen import PigPen
 from puzzles.a_hachiken_talk import HachikenTalk
+from puzzles.a_baseball import Baseball
 from puzzles.e_chicken_eggs import ChickenEggs
 from puzzles.e_horse_manure import HorseManure
 from puzzles.e_tokiwa_talk import TokiwaTalk
@@ -131,9 +132,9 @@ if horse_riding.completed and not afternoon.set_complete:
     stats = afternoon.run()
 
 # Puzzle - Baseball
-baseball_puzzle_complete = False # TODO: make actual obj
-if afternoon.set_complete and not baseball_puzzle_complete:
-    print("TODO")
+baseball = Baseball(stats, False)
+if afternoon.set_complete and not baseball.completed:
+    baseball.puzzle()
 
 # Puzzle Set 3 - Evening
 evening_intro = dedent("""
