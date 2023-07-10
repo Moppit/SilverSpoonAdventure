@@ -104,15 +104,15 @@ morning_intro = dedent("""
               but taking care of the horses makes riding them even more special. It looks like
               we've been tasked with feeding the horses and setting up a horse race track.
               """)
-horse_care = HorseCare(stats, True)
-race_track = RaceTrack(stats, True)
-aki_talk = AkiTalk(stats, True)
+horse_care = HorseCare(stats, False)
+race_track = RaceTrack(stats, False)
+aki_talk = AkiTalk(stats, False)
 morning = PuzzleSet(stats, [horse_care,race_track,aki_talk], introduction=morning_intro)
 if not morning.set_complete:
     stats = morning.run()
 
 # Puzzle - Horse Riding Event
-horse_riding = HorseRide(stats, True) 
+horse_riding = HorseRide(stats, False) 
 if morning.set_complete and not horse_riding.completed:
     horse_riding.puzzle()
 
@@ -123,15 +123,15 @@ afternoon_intro = dedent("""
               for lunch.
               """)
 
-lunch = Lunch(stats, True)
-pig_pen = PigPen(stats, True)
-hachiken_talk = HachikenTalk(stats, True)
+lunch = Lunch(stats, False)
+pig_pen = PigPen(stats, False)
+hachiken_talk = HachikenTalk(stats, False)
 afternoon = PuzzleSet(stats, [pig_pen,lunch,hachiken_talk], introduction=afternoon_intro)
 if horse_riding.completed and not afternoon.set_complete:
     stats = afternoon.run()
 
 # Puzzle - Baseball
-baseball_puzzle_complete = True # TODO: make actual obj
+baseball_puzzle_complete = False # TODO: make actual obj
 if afternoon.set_complete and not baseball_puzzle_complete:
     print("TODO")
 
@@ -144,14 +144,13 @@ evening_intro = dedent("""
             ...
             (We also have to dig up manure, but I'm going to ignore that for now.)
               """)
-chicken_eggs = ChickenEggs(stats, True)
-horse_manure = HorseManure(stats, True)
-tokiwa_talk = TokiwaTalk(stats, True)
+chicken_eggs = ChickenEggs(stats, False)
+horse_manure = HorseManure(stats, False)
+tokiwa_talk = TokiwaTalk(stats, False)
 evening = PuzzleSet(stats, [chicken_eggs, horse_manure, tokiwa_talk], introduction=evening_intro)
 if baseball_puzzle_complete and not evening.set_complete:
     stats = evening.run()
 
-evening.set_complete = True
 
 # Talk with Komaba
 komaba_talk = KomabaTalk(stats,False)
