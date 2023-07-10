@@ -66,7 +66,7 @@ class PigPen(Puzzle):
         input("(Press ENTER to continue)")
         print("\nAfter a lot of hammering and chasing around pigs, you and Hachiken get the pen set up.\n")
         input("(Press ENTER to continue)")
-        input("\nHachiken: Looks good as new! Nice work!\n")
+        print("\nHachiken: Looks good as new! Nice work!\n")
         input("(Press ENTER to continue)")
         print()
         self.stats.update_strength(1)

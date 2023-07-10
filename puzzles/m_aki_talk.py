@@ -37,7 +37,7 @@ class AkiTalk(Puzzle):
                 self.friends_talk()
                 self.starters_finished[2] = True
             elif topic == "3":
-                print("Yeah, sure. We still have a lot to do today!")
+                print("Aki: Yeah, sure. We still have a lot to do today!")
                 self.stats.update_social_confidence(2)
                 self.stats.update_social_intelligence(1)
                 self.stats.update_stamina(1)
@@ -90,11 +90,11 @@ class AkiTalk(Puzzle):
                     print("\nSocial Confidence Check of 15 or more: You feel confident enough to probe further.\n")
                     input("(Press ENTER to continue)")  
                     print("\nHuilin: Is there something else on your mind?\n")
-                    input("(Press ENTER to continue)\n")
-                    print("Aki: No... well yes I guess. I'm just thinking about a friend.\n")
-                    input("(Press ENTER to continue)\n")
+                    input("(Press ENTER to continue)")
+                    print("\nAki: No... well yes I guess. I'm just thinking about a friend.\n")
+                    input("(Press ENTER to continue)")
 
-                    response, user_quit = self.input_exitable("Do you ask her which friend? >> ")
+                    response, user_quit = self.input_exitable("\nDo you ask her which friend? >> ")
                     if user_quit:
                         return
                     if response.lower().strip() == 'yes' or response.lower().strip() == 'y':
@@ -118,10 +118,10 @@ class AkiTalk(Puzzle):
                             print("\nSocial Confidence Check of at least 25: You feel confident enough to keep probing\n")
                             input("(Press ENTER to continue)")
                             print("\nHuilin: Which friend? Are they alright?\n")
-                            input("(Press ENTER to continue)\n")
-                            print("Aki hesitates\n")
-                            input("(Press ENTER to continue)\n")
-                            print("Aki: I don't want to bother you with problems that don't involve you...\n")
+                            input("(Press ENTER to continue)")
+                            print("\nAki hesitates\n")
+                            input("(Press ENTER to continue)")
+                            print("\nAki: I don't want to bother you with problems that don't involve you...\n")
                             input("(Press ENTER to continue)")
                             print(dedent("""
                                 Aki: Your just like Hachiken, wanting to help everyone out even though it's
@@ -140,8 +140,8 @@ class AkiTalk(Puzzle):
                 Social Intelligence Check of 25 or more: She is thinking of a particular 
                                                          human who has a sick grandmother.
             """))
-            input("(Press ENTER to continue)\n")
-            response, user_quit = self.input_exitable("Do you ask her who she is thinking of? >> ")
+            input("(Press ENTER to continue)")
+            response, user_quit = self.input_exitable("\nDo you ask her who she is thinking of? >> ")
             if user_quit:
                 return
             if response.lower().strip() != "no" and response.lower().strip() != "n":
@@ -171,8 +171,8 @@ class AkiTalk(Puzzle):
                             """))
                     input("(Press ENTER to continue)")
                     print("\nHuilin: So... are you thinking of anyone in particular with a sick grandmother?")
-                    input("(Press ENTER to continue)\n")
-                    print("Aki: It's one of my good friends. He really cares for her a lot.")
+                    input("(Press ENTER to continue)")
+                    print("\nAki: It's one of my good friends. He really cares for her a lot.")
             else:
                 print("\nHuilin: Yeah, horses are pretty cool, aren't they?")
         else:
@@ -180,8 +180,8 @@ class AkiTalk(Puzzle):
                 Social Intelligence Check greater than 30: She is thinking of a friend who wants to take care of a sick
                                                            grandmother, and she also seems a bit sad for some reason.
                         """))
-            input("(Press ENTER to continue)\n")
-            response, user_quit = self.input_exitable("Do you ask her who she is thinking of and why she's a bit sad? >> ")
+            input("(Press ENTER to continue)")
+            response, user_quit = self.input_exitable("\nDo you ask her who she is thinking of and why she's a bit sad? >> ")
             if user_quit:
                 return
             if response.lower().strip() != "no" and response.lower().strip() != "n":

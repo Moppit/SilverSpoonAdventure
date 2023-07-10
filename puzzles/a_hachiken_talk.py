@@ -14,14 +14,14 @@ class HachikenTalk(Puzzle):
         self.discussion_starters = [
             "You really seem to care about pigs. Why do you like them so much?",
             "Everyone seems really excited for this pizza, huh?",
-            "How are Komaba and your other friends doing?"]
+            "How are Komaba kun and your other friends doing?"]
         self.starters_finished = [False,False,False]
 
     def puzzle(self):
 
         # Show the situation where Komaba comes to grab pizza
         print(dedent("""
-            You turn to speak to Hachiken, but before you get a word in...
+            You turn to speak to Hachiken kun, but before you get a word in...
         """))
         print(dedent("""
          Komaba: Hey! Hachiken!
@@ -124,8 +124,8 @@ class HachikenTalk(Puzzle):
             except:
                 print("Enter an integer")
         if int(roll) == 1:
-            print("Natural 1: You notice he has a lot of goodwill for his best friend, Komaba.")
-            print("\nHuilin: Yeah, I can't wait to see Komaba play at the game after lunch!")
+            print("Natural 1: You notice he has a lot of goodwill for his best friend, Komaba kun.")
+            print("\nHuilin: Yeah, I can't wait to see Komaba kun play at the game after lunch!")
         elif stat_check < 25:
             print("You notice that there's something else on his mind.")
             response, user_quit = self.input_exitable("Do you ask him what's on his mind? >> ")
@@ -139,7 +139,7 @@ class HachikenTalk(Puzzle):
                 stat_check = int(roll) + self.stats.social_confidence
                 if stat_check < 15:
                     print("Social Confidence Check less than 15: You do not feel confident enough to ask.")
-                    print("\nHuilin: Yeah, I can't wait to see Komaba play at the game after lunch!")
+                    print("\nHuilin: Yeah, I can't wait to see Komaba kun play at the game after lunch!")
                 else:
                     print("Social Confidence Check of 15 or more: You feel confident enough to probe further.")
                     print("\nHuilin: Is there something else on your mind?")
@@ -203,7 +203,7 @@ class HachikenTalk(Puzzle):
                     print(dedent("""
                         "Social Confidence Check less than 20: You do not feel confident enough to ask."
                     """))
-                    print("\nHuilin: Yeah, I can't wait to see Komaba play at the game after lunch!")
+                    print("\nHuilin: Yeah, I can't wait to see Komaba kun play at the game after lunch!")
                 else:
                     print(dedent("""
                         Social Confidence Check of at least 20: You feel confident enough to ask."""))
@@ -211,12 +211,12 @@ class HachikenTalk(Puzzle):
                     input("(Press ENTER to continue)\n")
                     print("Hachiken: Oh, I mean I'm okay -- I just worry about Komaba sometimes. I wish he'd let me help him.")
             else:
-                print("\nHuilin: Yeah, I can't wait to see Komaba play at the game after lunch!")
+                print("\nHuilin: Yeah, I can't wait to see Komaba kun play at the game after lunch!")
         else:
             print(dedent("""
-                Social Intelligence Check greater than 30: He seems a little worried about Komaba, and maybe a little frustrated.
+                Social Intelligence Check greater than 30: He seems a little worried about Komaba kun, and maybe a little frustrated.
                         """))
-            response, user_quit = self.input_exitable("Do you ask him why he's worried about Komaba? >> ")
+            response, user_quit = self.input_exitable("Do you ask him why he's worried about Komaba kun? >> ")
             if user_quit:
                 return
             if response.lower().strip() == 'yes' or response.lower().strip() == 'y':
@@ -233,11 +233,11 @@ class HachikenTalk(Puzzle):
                         print("Enter an integer")
                 if stat_check < 20:
                     print("Social Confidence Check less than 20: You do not feel confident enough to ask him further.")
-                    print("\nHuilin: Yeah, I can't wait to see Komaba play at the game after lunch!")
+                    print("\nHuilin: Yeah, I can't wait to see Komaba kun play at the game after lunch!")
                 else:
                     print("Social Confidence Check of at least 20: You feel confident enough to talk about what you are thinking.")
                     print(dedent("""
-                        Huilin: So... is Komaba okay? You seem a little worried about him.
+                        Huilin: So... is Komaba kun okay? You seem a little worried about him.
                                 """))
                     print(dedent("""
                    Hachiken: Yeah, I probably worry about him too much, but that's the hazard of being best friends, right? Haha. 

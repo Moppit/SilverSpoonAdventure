@@ -10,6 +10,7 @@ from puzzles.a_hachiken_talk import HachikenTalk
 from puzzles.e_chicken_eggs import ChickenEggs
 from puzzles.e_horse_manure import HorseManure
 from puzzles.e_tokiwa_talk import TokiwaTalk
+from puzzles.n_komaba_talk import KomabaTalk
 from puzzle_set import PuzzleSet
 from textwrap import dedent
 from playsound import playsound
@@ -103,28 +104,28 @@ morning_intro = dedent("""
               but taking care of the horses makes riding them even more special. It looks like
               we've been tasked with feeding the horses and setting up a horse race track.
               """)
-horse_care = HorseCare(stats, False)
-race_track = RaceTrack(stats, False)
-aki_talk = AkiTalk(stats, False)
+horse_care = HorseCare(stats, True)
+race_track = RaceTrack(stats, True)
+aki_talk = AkiTalk(stats, True)
 morning = PuzzleSet(stats, [horse_care,race_track,aki_talk], introduction=morning_intro)
 if not morning.set_complete:
     stats = morning.run()
 
 # Puzzle - Horse Riding Event
-horse_riding = HorseRide(stats, False) 
+horse_riding = HorseRide(stats, True) 
 if morning.set_complete and not horse_riding.completed:
     horse_riding.puzzle()
 
 # Puzzle Set 2 - Afternoon
 afternoon_intro = dedent("""
-    Hachiken: Hi Huilin! Nice to meet you. It seems like you and I have been paired 
+    Hachiken: Hi Huilin san! Nice to meet you. It seems like you and I have been paired 
               for chores until lunch! We've been assigned to the pigs and making pizza
               for lunch.
               """)
 
-lunch = Lunch(stats, False)
-pig_pen = PigPen(stats, False)
-hachiken_talk = HachikenTalk(stats, False)
+lunch = Lunch(stats, True)
+pig_pen = PigPen(stats, True)
+hachiken_talk = HachikenTalk(stats, True)
 afternoon = PuzzleSet(stats, [pig_pen,lunch,hachiken_talk], introduction=afternoon_intro)
 if horse_riding.completed and not afternoon.set_complete:
     stats = afternoon.run()
@@ -143,17 +144,65 @@ evening_intro = dedent("""
             ...
             (We also have to dig up manure, but I'm going to ignore that for now.)
               """)
-chicken_eggs = ChickenEggs(stats, False)
-horse_manure = HorseManure(stats, False)
-tokiwa_talk = TokiwaTalk(stats, False)
+chicken_eggs = ChickenEggs(stats, True)
+horse_manure = HorseManure(stats, True)
+tokiwa_talk = TokiwaTalk(stats, True)
 evening = PuzzleSet(stats, [chicken_eggs, horse_manure, tokiwa_talk], introduction=evening_intro)
 if baseball_puzzle_complete and not evening.set_complete:
     stats = evening.run()
 
+evening.set_complete = True
+
 # Talk with Komaba
-
+komaba_talk = KomabaTalk(stats,False)
+if evening.set_complete and not komaba_talk.completed:
+    print(dedent("""
+        Having finished all of your evening chores, you decide to wander around campus a bit. As
+        you look at the setting sun you think of what a long day it has been - long but 
+        fulfilling... 
+    """))
+    input("(Press ENTER to continue)")
+    print(dedent("""
+        Wait... didn't I have that thought before? ... It was right before I went to sleep...
+    """))
+    input("(Press ENTER to continue)")
+    print(dedent("""
+        I'm dreaming, you realize, and you feel yourself waking up. Wait, no I'm not done with
+        everything... there's still one more thing I have to do.
+    """))
+    input("(Press ENTER to continue)")
+    print(dedent("""
+        The thought of him makes him arrive. You see Komaba kun jogging over to you holding a baseball
+        in one hand and a picture of his family in the other.
+    """))
+    input("(Press ENTER to continue)")
+    print(dedent("""
+        As he approaches you he tucks the picture and the baseball into his pocket.
+        Komaba: Hey Huilin, glad I got to see you before you went off to bed. I just wanted to
+                thank you for cracking the other teams baseball signs. I never thought it was
+                possible. You'll have to teach me how you did it. It will be useful when I 
+                uhh... 
+    """))
+    input("(Press ENTER to continue)")
+    print(dedent("""
+        Huilin: When you play baseball in the US!
+    """))
+    input("(Press ENTER to continue)")
+    print(dedent("""
+        Komaba: IF I play baseball in the US... Tokiwa told you?
+    """))
+    input("(Press ENTER to continue)")
+    print(dedent("""
+        Huilin: Yup! Well anyways, the baseball signs weren't actually that hard to crack. I have 
+                a friend who's been training me to break codes like that. I can definately teach 
+                you how to do it, but first I actually wanted to talk to you about some other things...
+    """))
+    stats = komaba_talk.run()
 # Wrap Up
-
+if komaba_talk.completed:
+    print("\nYou head off towards the girls dormitory guided by the light of the full moon.\n")
+    input("(Press ENTER to continue)")
+    print('As you drift off to sleep you think: "I\'m going to miss this place" ')
 # Save and exit
-print("Game has been saved.")
+# print("Game has been saved.")
 # TODO: write to the file here

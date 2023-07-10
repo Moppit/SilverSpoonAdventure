@@ -36,7 +36,7 @@ class TokiwaTalk(Puzzle):
                 self.rumors_talk()
                 self.starters_finished[2] = True
             elif topic == "3":
-                print("Yeah, sure. We still have a lot to do today!")
+                print("Tokiwa: Yeah, sure. We still have a lot to do today!") # TODO: Only say this if there are more tasks to do
                 self.stats.update_social_confidence(2)
                 self.stats.update_social_intelligence(1)
                 self.stats.update_stamina(2)

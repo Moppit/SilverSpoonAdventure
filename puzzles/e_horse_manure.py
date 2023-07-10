@@ -215,7 +215,7 @@ class HorseManure(Puzzle):
 
         input("(Press ENTER to continue)")
         
-        self.dexterity.update_dexterity(3)
+        self.stats.update_dexterity(3)
         self.stats.update_stamina(-1)
         self.stats.print_stats()
         self.completed = True
