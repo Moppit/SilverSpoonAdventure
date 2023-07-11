@@ -16,3 +16,7 @@ pip3 install Pillow
 ```
 python3 main.py
 ```
+
+### Helpful Information
+- If you get stuck on a puzzle, you can hit q to leave that puzzle and try something else
+- Stat Checks are calculated by adding your stat to the d20 that you roll
