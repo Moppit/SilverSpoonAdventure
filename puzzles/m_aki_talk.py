@@ -177,8 +177,9 @@ class AkiTalk(Puzzle):
                 print("\nHuilin: Yeah, horses are pretty cool, aren't they?")
         else:
             print(dedent("""
-                Social Intelligence Check greater than 30: She is thinking of a friend who wants to take care of a sick
-                                                           grandmother, and she also seems a bit sad for some reason.
+                Social Intelligence Check greater than 30: She is thinking of a friend who wants to take care of a 
+                                                           sick grandmother, and she also seems a bit sad for some
+                                                           reason.
                         """))
             input("(Press ENTER to continue)")
             response, user_quit = self.input_exitable("\nDo you ask her who she is thinking of and why she's a bit sad? >> ")

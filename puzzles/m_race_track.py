@@ -34,14 +34,15 @@ class RaceTrack(Puzzle):
                     "The drawing shows a number where each spectator was watching from along with 
                     an arrow showing which way they were facing. The number represents how many 
                     obstacles they saw while watching the race. Note that I did not count observers
-                    as obstacles in the diagram"
+                    as obstacles in the diagram and people can see past people."
                 """))
         input("(Press ENTER to continue)")
         print(dedent("""
                Aki: Sounds pretty confusing to me, so I'll let you handle it. But I do rememeber 
                     some things that might be helpful. After we set up the race track, there weren't 
                     any empty spots left on the field. Every spot was either filled with an obstacle 
-                    or a part of the race track. Also, the race track made a loop. Hopefully you can
+                    or a part of the race track, there were never two obstacles next to each other. 
+                    Also, the race track bends around the obstacles to form a loop. Hopefully you can 
                     piece all this information togther to figure out how the track was set up.
                 """))
         input("(Press ENTER to continue)")

@@ -134,9 +134,9 @@ class HorseManure(Puzzle):
         input("(Press ENTER to continue)")
 
         print(dedent(f"""
-           Tokiwa: Remember, there were only {self.num_mines} horses are the field today, so there should 
-                   only be {self.num_mines} spots to mark. If you find yourself with more than {self.num_mines} spots, be sure to
-                   keep searching!
+           Tokiwa: Remember, there were only {self.num_mines} horses at the field today, so there should 
+                   only be {self.num_mines} spots to mark. If you find yourself with more than {self.num_mines} spots,
+                   be sure to keep searching!
               """))
 
         input("(Press ENTER to continue)")

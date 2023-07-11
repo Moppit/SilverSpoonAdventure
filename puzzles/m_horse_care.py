@@ -25,20 +25,20 @@ class HorseCare(Puzzle):
            Aki: Since he's sick, we don't want to overfeed him, 
                 but we need to make sure he gets all the nutrition 
                 he needs. Generally its good to feed horses at least 
-                10,000 calories, with 500 grams of protien, and 
-                enough vitamins. 
+                10,000 calories, at least 500 grams of protein, and 
+                atleast the daily value of vitamins. 
                 """))
         input("(Press ENTER to continue)")
         print(dedent("""
                Aki: I believe one pound of hay is around 2,000 calories, 
-                    has 5 grams of protien, and has around 20% of the daily 
+                    has 50 grams of protein, and has around 40% of the daily 
                     value of vitamins.
                 """))
         input("(Press ENTER to continue)")
         print(dedent("""
                Aki: Meanwhile, oats are like a protien shake for horse, 
-                    giving 3,000 calories and 200 grams of protien, but 
-                    only 5 percent of the daily value of vitamins. 
+                    giving 3,000 calories and 200 grams of protein, but 
+                    only 10 percent of the daily value of vitamins. 
                 """))
         input("(Press ENTER to continue)")
         print(dedent("""
@@ -49,7 +49,7 @@ class HorseCare(Puzzle):
                 """))
         hay = None
         oats = None
-        while hay != 4.5 or oats != 2:
+        while hay != 2 or oats != 2:
             try:
                 hay_lbs, user_quit = self.input_exitable("How many pounds of hay do you feed Maron?  ")
                 if user_quit:

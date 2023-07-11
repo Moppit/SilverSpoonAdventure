@@ -14,7 +14,7 @@ class PigPen(Puzzle):
 
     def puzzle(self):
         print(dedent("""
-              Hachiken: Here is the pig pen. I like to come here everyday to feed these guys and chek
+              Hachiken: Here is the pig pen. I like to come here everyday to feed these guys and check
                         out how they're doing.
               """))
         input("(Press ENTER to continue)")
@@ -55,7 +55,7 @@ class PigPen(Puzzle):
             
         pig = None
         while pig != "chashu":
-            pig, user_quit = self.input_exitable("\nFind out how divide the pig pen into stalls, then enter the name of the pig who gets the marked square: ")
+            pig, user_quit = self.input_exitable("\nFind out how divide the pig pen into stalls, then enter the name of the pig who gets\nthe marked square: ")
             if user_quit:
                 return
             pig = pig.lower()

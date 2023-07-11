@@ -41,7 +41,7 @@ class HorseRide(Puzzle):
         input("(Press ENTER to continue)")
         print(dedent("""
                Aki: Now we want to check the hooves to make sure the horseshoes are fitting properly and
-                    there is no rocks stuck in the hooves. You can use this tool to remove any debris.
+                    there are no rocks stuck in the hooves. You can use this tool to remove any debris.
                 """))
         input("(Press ENTER to continue)")
         print("\nAki hands you a hook shaped tool.\n")
@@ -118,7 +118,7 @@ class HorseRide(Puzzle):
         print(dedent("""
                Aki: You're going to want to start here at the finish line. Then we go through 4 gates
                     before you get to gate F. After that you'll want to go through 3 more gates before 
-                    arriving at gate J. Then you're almost done. You just have to go through the remainging gates 
+                    arriving at gate J. Then you're almost done. You just have to go through the remaining gates 
                     and get back to the start line. Also you must never retrace or cross any path that you have
                     taken before.
                 """))

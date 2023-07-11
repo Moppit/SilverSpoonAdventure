@@ -43,7 +43,7 @@ print(dedent("""
 input("(Press ENTER to continue)")
 
 print(dedent("""
-         Aki: Ah, sorry! I didn't mean to scare you -- you're a pretty deep sleeper! I 
+         ???: Ah, sorry! I didn't mean to scare you -- you're a pretty deep sleeper! I 
               wanted to make sure you got up on time, since I know this is your first day
               here. Don't hesitate to ask if you have any questions, and see you at breakfast!
               """))

@@ -70,6 +70,7 @@ class Baseball(Puzzle):
         print("\n\nAnd the game begins!\n\n")
         input("(Press ENTER to continue)")
 
+        print("As you get ready to read the baseball signs, you recall that\nmost of the signs are just a distraction and that the main information\nis contained in just a few signs.")
         print("You notice the following gestures being used by Inada:")
         for item in self.movements:
             print(item, ":", self.movements[item])
