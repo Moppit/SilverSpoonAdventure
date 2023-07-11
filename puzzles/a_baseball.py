@@ -160,9 +160,12 @@ class Baseball(Puzzle):
         # Randomize
         randomized = None
         while not randomized:
+            keep_going = False
             random.shuffle(chars)
             for i in range(len(chars)-1):
-                if chars[i] != self.indicator and chars[i+1] != self.steal:
-                    randomized = True
+                if chars[i] == self.indicator and chars[i+1] == self.steal:
+                    keep_going = True
+            if not keep_going:
+                randomized = True
 
         return "".join(chars)
