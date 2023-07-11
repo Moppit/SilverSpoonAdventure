@@ -61,20 +61,20 @@ class HorseCare(Puzzle):
                 oats = float(oat_lbs)
             except:
                 pass
-            if hay != 4.5 or oats != 2:
+            if hay != 2 or oats != 2:
                 print("\nAki stops you")
                 print("Aki: I can't follow the math, but something feels off...")
             if oats and oats < 2:
                 print("     I don't think it's enough oats and...")
             elif oats and oats > 2:
                 print("     I think it's too much oats and...")
-            if hay and hay < 4.5:
+            if hay and hay < 2:
                 print("     I don't think it's enough hay")
-            elif hay and hay > 4.5:
+            elif hay and hay > 2:
                 print("     I think it's too much hay")
             elif hay:
                 print("     I think the hay is about right")  
-            if hay != 4.5 or oats != 2:
+            if hay != 2 or oats != 2:
                 print("Aki: Let's try again!\n")
         print(dedent("""
             Aki: Thanks for doing the math for me, that seems about right.
