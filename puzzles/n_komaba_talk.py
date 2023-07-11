@@ -39,6 +39,7 @@ class KomabaTalk(Puzzle):
                 Komaba: Yeah, I've got to get up early tommorow to practice. Thanks for talking to me.
                         I think talking to you has helped me make my decsion about the offer.
                 """))
+                input("(Press ENTER to continue)")
                 self.stats.update_social_intelligence(2)
                 self.stats.update_stamina(2)
                 self.stats.update_social_confidence(10)
@@ -105,11 +106,15 @@ class KomabaTalk(Puzzle):
                 except:
                     print("Enter an integer")
             if stat_check < 30:
-                print("\nSocial Intelligence Check of 29 or less: You don't detect much other than the teasing that comes from a comfortable friendship.\n")
+                print(dedent("""
+                    Social Intelligence Check of 29 or less: You don't detect much other than the 
+                                                             teasing that comes from a comfortable friendship.
+                    """))
             else:
                 print(dedent("""
-                    Social Intelligence Check of at least 20: Behind his nonchalant words you notice that he actually does care for Tokiwa and
-                                                              you're sure he'll actually miss Tokiwa a lot.
+                    Social Intelligence Check of at least 20: Behind his nonchalant words you notice that he actually
+                                                              does care for Tokiwa and you're sure he'll actually miss 
+                                                              Tokiwa a lot.
                 """))
             input("(Press ENTER to continue)")
             print("\nHuilin: Yeah we played egg mancala... It was actually pretty fun!\n")
@@ -209,7 +214,10 @@ class KomabaTalk(Puzzle):
                     elif response == "3" and response_asked[2] == False:
                         print("\nHuilin: Will you miss her?\n")
                         input("(Press ENTER to continue)")
-                        print("\nKomaba: She needs someone to take care of her. It will be tough on the others if I won't be around to help.\n")
+                        print(dedent("""
+                            Komaba: She needs someone to take care of her. It will be tough on the others if I won't 
+                                    be around to help.
+                            """))
                         input("(Press ENTER to continue)")
                         stat_check = None
                         while True:
@@ -223,12 +231,17 @@ class KomabaTalk(Puzzle):
                             except:
                                 print("Enter an integer")
                         if stat_check < 25:
-                            print("\nSocial Intelligence Check of less than 25: He really seems to take his duty of taking care of her seriously.\n")
+                            print(dedent("""
+                            Social Intelligence Check of less than 25: He really seems to take his duty of 
+                                                                       taking care of her seriously.
+                                """))
                         else:
                             print(dedent("""
-                                Social Intelligence Check of at least 25: He will actually miss taking care of her a lot. It's going to be really tough 
-                                                                          for him to leave his sick grandmother and go to a different country. It looks
-                                                                          like this might be the main reason he's hesitant to accept the offer.
+                                Social Intelligence Check of at least 25: He will actually miss taking care of her a lot. 
+                                                                          It's going to be really tough for him to leave 
+                                                                          his sick grandmother and go to a different country. 
+                                                                          It looks like this might be the main reason he's 
+                                                                          hesitant to accept the offer.
                                 """))
                         response_asked[2] = True
                     else:
@@ -265,7 +278,10 @@ class KomabaTalk(Puzzle):
                 input("(Press ENTER to continue)")
                 print("\nKomaba: ...\n")
                 input("(Press ENTER to continue)")
-                print("\nKomaba: Yeah I will. I guess its one of the reasons I haven't accepted the baseball offer yet.\n")
+                print(dedent("""
+                    Komaba: Yeah I will. I guess its one of the reasons I 
+                            haven't accepted the baseball offer yet.
+                        """))
         else:
             print("Huilin: Yeah, Aki's pretty cool!")
 
@@ -295,7 +311,7 @@ class KomabaTalk(Puzzle):
         if response == 'y' or response == 'yes':
             stat_check = None
             while True:
-                print("\nRoll a d20 for Social Confidence to see if you are confident enough to question him about money.")
+                print("\nRoll a d20 for Social Confidence to see if you are confident\nenough to question him about money.")
                 roll, user_quit = self.input_exitable("Enter result >> ")
                 if user_quit:
                     return
@@ -307,7 +323,8 @@ class KomabaTalk(Puzzle):
 
             if stat_check < 20:
                 print(dedent("""
-                    Social Confidence Check less than 20: You feel it would not be appropriate to ask him about money.
+                    Social Confidence Check less than 20: You feel it would not be appropriate to 
+                                                          ask him about money.
                 """))
                 input("(Press ENTER to continue)")
             else:
@@ -315,14 +332,24 @@ class KomabaTalk(Puzzle):
                     Social Confidence Check of at least 20: You confident enough to ask him about money.
                 """))
                 input("(Press ENTER to continue)")
-                print("\nHuilin: So... You'll be making a lot of money right? That will be helpful for your family's finacial situation, won't it?\n")
+                print(dedent(
+                    """
+                    Huilin: So... You'll be making a lot of money right? That will be helpful 
+                            for your family's finacial situation, won't it?
+                    """))
                 input("(Press ENTER to continue)")
                 print(dedent("""
-                    Komaba: Yeah, it should pay my grandmother's medical bills in the short term, and in the long run
-                            I should have enough to pay off the family debt and eventually buy back the farm.
+                    Komaba: Yeah, it should pay my grandmother's medical bills in the short term, 
+                            and in the long run I should have enough to pay off the family debt 
+                            and eventually buy back the farm.
                 """))
                 input("(Press ENTER to continue)")
-                print("\nHuilin: I see... yes that would be nice. But of course it's never easy to leave your home behind.\n")
+                print(dedent(
+                    """
+                    Huilin: I see... yes that would be nice. But of course it's never 
+                            easy to leave your home behind.
+                    """
+                ))
                 self.starters_finished[1] = True
                 input("(Press ENTER to continue)")
     
@@ -342,7 +369,8 @@ class KomabaTalk(Puzzle):
         """))
         input("(Press ENTER to continue)")
         print(dedent("""
-            Komaba: Impressive! It's too much math and language for me. I'll just leave this kind of stuff to you and Hachiken.
+            Komaba: Impressive! It's too much math and language for me. I'll just leave this 
+                    kind of stuff to you and Hachiken.
         """))
         input("(Press ENTER to continue)")
         

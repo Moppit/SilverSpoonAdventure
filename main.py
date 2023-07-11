@@ -15,6 +15,7 @@ from puzzles.n_komaba_talk import KomabaTalk
 from puzzle_set import PuzzleSet
 from textwrap import dedent
 from playsound import playsound
+from PIL import Image
 
 # Stats tracking vars
 # Instantiated here, read from file
@@ -174,7 +175,7 @@ if evening.set_complete and not komaba_talk.completed:
     """))
     input("(Press ENTER to continue)")
     print(dedent("""
-        As he approaches you he tucks the picture and the baseball into his pocket.
+        As he approaches you, he tucks the picture and the baseball into his pocket.
         Komaba: Hey Huilin, glad I got to see you before you went off to bed. I just wanted to
                 thank you for cracking the other teams baseball signs. I never thought it was
                 possible. You'll have to teach me how you did it. It will be useful when I 
@@ -200,6 +201,8 @@ if komaba_talk.completed:
     print("\nYou head off towards the girls dormitory guided by the light of the full moon.\n")
     input("(Press ENTER to continue)")
     print('As you drift off to sleep you think: "I\'m going to miss this place" ')
+    img = Image.open("res/the-end.jpg")
+    img.show()
 # Save and exit
 # print("Game has been saved.")
 # TODO: write to the file here
