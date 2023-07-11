@@ -51,14 +51,21 @@ class Baseball(Puzzle):
 
         # Explain the symbols: note which letter means what
         print(dedent("""
-            You realize, the other team is going to use baseball signs! If you can interpret them,
-            that would be a huge boost to your team. You run up to Komaba, your team's captain,
-            to tell him your plan.
+            You realize, the other team is going to use baseball signs! You remember from reading 
+            about baseball signs a while ago, that a baseball sign is usually an indicator
+            (i.e. a movement to signal when important information is coming), followed by a
+            cue to act. The rest of the movements are supposed to distract from the intended 
+            message.
+        """))
+        input("(Press ENTER to continue)")
+
+        print(dedent("""
+            If you can interpret the signs, that would be a huge boost to your team. You run up 
+            to Komaba, your team's captain, to tell him your plan.
 
             Huilin: Komaba! I think the other team will be using baseball signs. I'm going to try
                     to crack it.
         """))
-        input("(Press ENTER to continue)")
 
         print(dedent("""
             Komaba: Oh really? That's a cool idea, I haven't tried that before. Cracking an
@@ -81,7 +88,7 @@ class Baseball(Puzzle):
             print("You stare intently as the coach signals to their team.")
             print("The coach makes the following signs:", signs)
             try:
-                guess, user_quit = self.input_exitable("What do you guess? 'steals' or 'doesn't steal'? (or 'q' to exit): ")
+                guess, user_quit = self.input_exitable("What do you guess? 'steals' or 'doesn't steal'? (or 'q' to exit the game): ")
                 if user_quit:
                     return
 
@@ -96,17 +103,17 @@ class Baseball(Puzzle):
             except:
                 pass
 
-            if self.num_consecutive_correct >= 5:
+            if self.num_consecutive_correct >= 3:
                 print()
-                print("You have gotten 5 correct in a row!")
+                print("You have gotten 3 correct in a row!")
                 print("You quickly run up to the pitcher Komaba to tell him what you've discerned.")
                 print("Komaba: Oh hey! Did you figure out which action is the indicator?")
-                guessIndicator, user_quit = self.input_exitable("(enter H, N, S, C, E, A, or 'q' to exit): ")
+                guessIndicator, user_quit = self.input_exitable("(enter H, N, S, C, E, A, or 'q' to exit the game): ")
                 if user_quit:
                     return
                 if guessIndicator == self.indicator:
                     print("Komaba: Gotcha! Intuitively, that seems right. Do you know which action indicates a steal?")
-                    guessSteal, user_quit = self.input_exitable("(enter H, N, S, C, E, A, or 'q' to exit): ")
+                    guessSteal, user_quit = self.input_exitable("(enter H, N, S, C, E, A, or 'q' to exit the game): ")
                     if user_quit:
                         return
                     if guessSteal == self.steal:

@@ -135,14 +135,22 @@ class HorseManure(Puzzle):
 
         print(dedent(f"""
            Tokiwa: Remember, there were only {self.num_mines} horses are the field today, so there should 
-                   only be {self.num_mines} spots to mark. If you find yourself with more than {self.num_mines} spots, be sure to
-                   keep searching!
+                   only be {self.num_mines} manure piles to mark. If you find yourself with more than {self.num_mines} marked spots, be sure to
+                   be sure to narrow down the marked spots until you have the right amount!
               """))
 
         input("(Press ENTER to continue)")
 
         # Minesweeper!
         self.create_board()
+
+        # Print legend
+        print("----- LEGEND -----")
+        print(self.symbols["covered"], "Unexplored spot")
+        print(self.symbols["blank"], "Fresh, untainted grass")
+        print(self.symbols["marked"], "Marked spot")
+        print(self.symbols["mine"], "Horse crap")
+        print(self.symbols["1"], "Number indicates how strong the smell is 🥲 1 is lowest")
 
         # Keep playing until all tiles are unlocked
         while not self.board_is_uncovered():

@@ -12,7 +12,7 @@ class HachikenTalk(Puzzle):
         self.description = "Talk to Hachiken"
         self.save_key = "AHT"
         self.discussion_starters = [
-            "You really seem to care about pigs. Why do you like them so much?",
+            "You really seem fond of the pigs. Isn't it hard to deal with the\n   fact that they will be turned into meat one day?",
             "Everyone seems really excited for this pizza, huh?",
             "How are Komaba kun and your other friends doing?"]
         self.starters_finished = [False,False,False]
@@ -38,16 +38,14 @@ class HachikenTalk(Puzzle):
         input("(Press ENTER to continue)")
         print(dedent("""
          Komaba: Woooow Hachiken, I can even hear the air quotes in your voice, it's
-                 a real thing you know!
-                 ...
-                 So yes heh, that's exactly what I'm here for. Hachiken, you really know 
-                 me too well.
+                 a real thing you know! But yes, that's exactly what I'm here for. 
+                 Hachiken, you really know me too well.
         """))
         input("(Press ENTER to continue)")
         print(dedent("""
-         Hachiken: Dude, it doesn't take a genius to see how diligent you are about baseball.
-                   The pizza isn't ready yet unfortunately, but let me sneak you a banana. Come
-                   back in a bit, and it should be ready!
+         Hachiken: It doesn't take a genius to see how diligent you are about baseball.
+                   The pizza isn't ready yet unfortunately, but let me sneak you a banana. 
+                   Come back in a bit, and it should be ready!
         """))
         input("(Press ENTER to continue)")
         print(dedent("""
@@ -93,9 +91,8 @@ class HachikenTalk(Puzzle):
         
     def pig_talk(self):
         print(dedent("""
-            Hachiken: Oh yeah, how could you not? Pigs are so sweet and smart. It took me a while 
-                      to get over the idea of eating them, they're that cute. Butadon was my 
-                      favorite. But alas, I can't give up bacon.
+            Hachiken: Oh definitely -- pigs are so sweet and smart, it took me a while 
+                      to get over the idea of eating them. Alas, I can't give up bacon.
         """))
     
     def pizza_talk(self):
