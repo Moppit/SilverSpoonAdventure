@@ -31,7 +31,7 @@ class ChickenEggs(Puzzle):
                    1) I'll stand with my bucket on the west side of the coop and you'll
                       be on the east side with your bucket.
                    2) There are 2 rows of 6 hens -- the nests on the southern side are
-                      your playing field, which the northern nests are where I move. Each
+                      your playing field, while the northern nests are where I move. Each
                       hen has 4 eggs in her nest at the moment.
                    3) The goal is to gather as many eggs in your bucket as you can. The 
                       person with the most eggs wins!

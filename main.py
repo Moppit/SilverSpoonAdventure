@@ -19,7 +19,6 @@ from playsound import playsound
 # Stats tracking vars
 # Instantiated here, read from file
 stats = Stats()
-
 # Welcome code
 print(dedent("""
          It's been a long day.
@@ -147,7 +146,7 @@ chicken_eggs = ChickenEggs(stats, False)
 horse_manure = HorseManure(stats, False)
 tokiwa_talk = TokiwaTalk(stats, False)
 evening = PuzzleSet(stats, [chicken_eggs, horse_manure, tokiwa_talk], introduction=evening_intro)
-if baseball_puzzle_complete and not evening.set_complete:
+if baseball.completed and not evening.set_complete:
     stats = evening.run()
 
 
