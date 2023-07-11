@@ -113,7 +113,9 @@ if not morning.set_complete:
 # Puzzle - Horse Riding Event
 horse_riding = HorseRide(stats, False) 
 if morning.set_complete and not horse_riding.completed:
-    horse_riding.puzzle()
+    new_stats = horse_riding.run()
+    if horse_riding.completed:
+        stats = new_stats
 
 # Puzzle Set 2 - Afternoon
 afternoon_intro = dedent("""
@@ -132,7 +134,9 @@ if horse_riding.completed and not afternoon.set_complete:
 # Puzzle - Baseball
 baseball = Baseball(stats, False)
 if afternoon.set_complete and not baseball.completed:
-    baseball.puzzle()
+    new_stats = baseball.run()
+    if baseball.completed:
+        stats = new_stats
 
 # Puzzle Set 3 - Evening
 evening_intro = dedent("""
