@@ -83,12 +83,10 @@ print(dedent("""
               we've been assigned to the horses! Do you like horses at all? 
               """))
 
-# TODO: validate -- not that it matters, but catching non 1-3 input
 input(dedent("""
          1) Yes!!
          2) Abso-friggin-lutely!!!!
          3) 🐴
-         
               """))
 
 print(dedent("""

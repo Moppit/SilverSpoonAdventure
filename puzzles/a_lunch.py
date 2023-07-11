@@ -14,10 +14,20 @@ class Lunch(Puzzle):
     def puzzle(self):
         # Puzzle intro
         print(dedent("""
-         Hachiken: Lunch it is! Fair warning, all of these guys are\n
-                   *super* picky about their food. We're going to make\n
-                   pizza today, here's the recipe.
+         Hachiken: Lunch it is! I've been doing a bit of research, and I think I'm ready
+                   to make the perfect pizza that will cater to each person's desire. Can
+                   you help me work out the final configuration? 
               """))
+        input(dedent("""
+                1) Yes!!
+                2) Sure thing!
+                3) 🍕
+                    """))
+
+        print(dedent("""
+                Hachiken: Thanks! So here's what I have so far.
+                    """))
+
         input("(Press ENTER to continue)")
 
         # Display puzzle
@@ -26,12 +36,22 @@ class Lunch(Puzzle):
         
         # Start puzzle
         print(dedent(f"""
-         Hachiken: It's super cryptic, so I'm not sure what to do. All I know is that
-                   each person wants all of the toppings, and they don't want anyone
-                   else to have the same topping as them per circular ring. Do you think
-                   you can figure it out? Let's just figure out Komaba's slice for now,
-                   since he'll need it soon.
+         Hachiken: I did a poll a while back to figure out people's topping preferences.
+                   Each person provided 3 critical topping preferences, and the rest are
+                   somewhat flexible, so we can figure out the rest. In order to make the
+                   pizza aesthetically pleasing: 
+                   
+                   1) No two toppings can appear at two different spots at the same distance 
+                      from the center.
+                   2) I want to make sure everyone tries each topping, so they have to have
+                      every topping on each slice.
+                   3) The poll ranked 8 toppings, with 1 as least favorite and 8 as favorite.
               """))
+        input("(Press ENTER to continue)")
+
+        print(dedent("""
+            Hachiken: Let's just figure out Komaba's slice for now, since he'll need it soon.
+        """))
         input("(Press ENTER to continue)")
 
         guess = None
