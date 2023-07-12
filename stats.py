@@ -30,6 +30,7 @@ class Stats:
         print()
         if(delta > 0):
             print("You feel your inner grace come out **Dexterity Level Up!**")
+            time.sleep(2.0)
         if(delta < 0):
             print("You feel clumsy **Dexterity Level Down :(**")
             time.sleep(2.0)
@@ -40,6 +41,7 @@ class Stats:
         print()
         if(delta > 0):
             print("Farm work is great for building muscles **Strength Level Up!**")
+            time.sleep(2.0)
         if(delta < 0):
             print("You pulled a muscle from the strenuous work **Strength Level Down :(**")
             time.sleep(2.0)
@@ -50,6 +52,7 @@ class Stats:
         print()
         if(delta > 0):
             print("You feel your understanding of other people's thoughts and emotions growing.\n**Social Intelligence Level Up!**")
+            time.sleep(2.0)
         if(delta < 0):
             print("Other people's thoughts and emotions start to feel a bit foggy to you. **Social Intelligence Level Down :(**")
             time.sleep(2.0)
@@ -60,6 +63,7 @@ class Stats:
         print()
         if(delta > 0):
             print("The positive social interaction boosts your confidence. **Social Confidence Level Up!**")
+            time.sleep(2.0)
         if(delta < 0):
             print("Oops, you send something wrong and now you feel kind of nervous.\n**Social Confidence Level Down :(**")
             time.sleep(2.0)
@@ -70,6 +74,7 @@ class Stats:
         print()
         if(delta > 0):
             print("Social interaction boosts your stamina, and you start to feel a skip in your step again.\n**Stamina Increases**")
+            time.sleep(2.0)
         if(delta < 0):
             print("Farm work is tiring! **Stamina Decreases**")
             time.sleep(2.0)
